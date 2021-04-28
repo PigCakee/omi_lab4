@@ -63,7 +63,7 @@ def data_augmentation():
     [
         preprocessing.RandomFlip("horizontal_and_vertical", seed=5)
     ]
-    visualize(augmented)
+    #visualize(augmented)
     return augmented
 )
 
