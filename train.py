@@ -51,6 +51,12 @@ def create_dataset(filenames, batch_size):
     .map(parse_proto_example, num_parallel_calls=tf.data.AUTOTUNE)\
     .batch(batch_size)\
     .prefetch(tf.data.AUTOTUNE)
+    
+def visualize(image):
+  fig = plt.figure()
+  plt.subplot(1,2,1)
+  plt.title('Augmented image')
+  plt.imshow(image)
 
 def data_augmentation(): 
     augmented = tf.keras.Sequential(
@@ -60,12 +66,6 @@ def data_augmentation():
     visualize(augmented)
     return augmented
 )
-
-def visualize(image):
-  fig = plt.figure()
-  plt.subplot(1,2,1)
-  plt.title('Augmented image')
-  plt.imshow(image)
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
