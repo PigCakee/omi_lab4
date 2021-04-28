@@ -51,12 +51,9 @@ def create_dataset(filenames, batch_size):
     .batch(batch_size)\
     .prefetch(tf.data.AUTOTUNE)
 
-for i in range(3):
-  seed = (i, 0)
-
 data_augmentation = tf.keras.Sequential(
     [
-        preprocessing.RandomFlip("horizontal_and_vertical", seed=seed)
+        preprocessing.RandomFlip("horizontal_and_vertical", seed=1)
     ]
 )
 
