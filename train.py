@@ -65,7 +65,7 @@ def augment(image):
               tf.keras.layers.experimental.preprocessing.RandomRotation(
                 1.0, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0),
              ])    
-    return data_augmentation(image)
+  return data_augmentation(image)
 
 def main():
   args = argparse.ArgumentParser()
