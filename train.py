@@ -58,12 +58,12 @@ def visualize(image):
   plt.title('Augmented image')
   plt.imshow(image)
 
-def data_augmentation(): 
-  augmented = tf.keras.Sequential([
+def data_augmentation(inputs): 
+  inputs = tf.keras.Sequential([
       preprocessing.RandomFlip("horizontal_and_vertical", seed=5)
   ])
-  visualize(augmented)
-  return augmented
+  visualize(inputs)
+  return inputs
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
