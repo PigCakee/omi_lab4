@@ -53,7 +53,7 @@ def create_dataset(filenames, batch_size):
 
 data_augmentation = tf.keras.Sequential(
     [
-        preprocessing.RandomRotation(0.1, fill_mode='reflect', interpolation='bilinear', seed=1, name=None, fill_value=0.0)
+        preprocessing.RandomRotation(0.1, fill_mode='constant', interpolation='bilinear', seed=1, name=None, fill_value=0.0)
     ]
 )
 
