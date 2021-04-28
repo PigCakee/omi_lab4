@@ -14,6 +14,7 @@ import time
 from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
 from tensorflow.keras.applications import EfficientNetB0
+from tensorflow.keras.layers.experimental import preprocessing
 
 # Avoid greedy memory allocation to allow shared GPU usage
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -37,8 +38,6 @@ def parse_proto_example(proto):
   example['image'] = tf.image.decode_jpeg(example['image/encoded'], channels=3)
   example['image'] = tf.image.convert_image_dtype(example['image'], dtype=tf.uint8)
   example['image'] = tf.image.resize(example['image'], tf.constant([RESIZE_TO, RESIZE_TO]))
-  example['image'] = tf.image.random_flip_left_right(example['image'])
-  example['image'] = tf.image.random_flip_up_down(example['image'])
   return example['image'], tf.one_hot(example['image/label'], depth=NUM_CLASSES)
 
 
@@ -55,6 +54,9 @@ def create_dataset(filenames, batch_size):
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = tf.keras.layers.experimental.preprocessing.RandomRotation(
+    factor, fill_mode='reflect', interpolation='bilinear',
+    seed=None, name=None, fill_value=0.0)(x)
   x = EfficientNetB0(include_top=False, weights='imagenet', input_tensor = inputs)
   x.trainable = False
   x = tf.keras.layers.GlobalAveragePooling2D()(x.output)
@@ -87,7 +89,7 @@ def main():
     validation_data=validation_dataset,
     callbacks=[
       tf.keras.callbacks.TensorBoard(log_dir),
-      LearningRateScheduler(tf.keras.experimental.CosineDecay(0.001, 1000, 0.0))
+      LearningRateScheduler(tf.keras.experimental.CosineDecay(0.0001, 1000, 0.0))
     ]
   )
 
