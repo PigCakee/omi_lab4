@@ -61,10 +61,7 @@ def build_model():
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 def augment(image):
-  data_augmentation = tf.keras.Sequential([
-              tf.keras.layers.experimental.preprocessing.RandomRotation(
-                1.0, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0),
-             ])    
+  data_augmentation = tf.keras.layers.experimental.preprocessing.RandomRotation(1.0, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0)
   return data_augmentation(image)
 
 def main():
