@@ -56,13 +56,16 @@ def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   x = EfficientNetB0(include_top=False, weights='imagenet', input_tensor = inputs)
   x.trainable = False
-  x = tf.keras.layers.experimental.preprocessing.RandomRotation(
-    1.0, fill_mode='reflect', interpolation='bilinear',
-    seed=None, name=None, fill_value=0.0)(x)
   x = tf.keras.layers.GlobalAveragePooling2D()(x.output)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
+def augment(image):
+  data_augmentation = tf.keras.Sequential([
+              tf.keras.layers.experimental.preprocessing.RandomRotation(
+                1.0, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0),
+             ])    
+    return data_augmentation(image)
 
 def main():
   args = argparse.ArgumentParser()
@@ -70,6 +73,8 @@ def main():
   args = args.parse_args()
 
   dataset = create_dataset(glob.glob(args.train), BATCH_SIZE)
+  for img in dataset:
+    img = augment(img)
   train_size = int(TRAIN_SIZE * 0.7 / BATCH_SIZE)
   train_dataset = dataset.take(train_size)
   validation_dataset = dataset.skip(train_size)
