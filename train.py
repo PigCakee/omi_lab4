@@ -52,10 +52,13 @@ def create_dataset(filenames, batch_size):
     .batch(batch_size)\
     .prefetch(tf.data.AUTOTUNE)
 
-data_augmentation = tf.keras.Sequential(
+def data_augmentation: 
+    augmented = tf.keras.Sequential(
     [
         preprocessing.RandomFlip("horizontal_and_vertical", seed=5)
     ]
+    visualize(augmented)
+    return augmented
 )
 
 def visualize(image):
@@ -67,7 +70,6 @@ def visualize(image):
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   x = data_augmentation(inputs)
-  visualize(x)
   x = EfficientNetB0(include_top=False, weights='imagenet', input_tensor = inputs)
   x.trainable = False
   x = tf.keras.layers.GlobalAveragePooling2D()(x.output)
