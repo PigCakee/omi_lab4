@@ -55,7 +55,7 @@ def create_dataset(filenames, batch_size):
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   x = tf.keras.layers.experimental.preprocessing.RandomRotation(
-    factor, fill_mode='reflect', interpolation='bilinear',
+    1.0, fill_mode='reflect', interpolation='bilinear',
     seed=None, name=None, fill_value=0.0)(x)
   x = EfficientNetB0(include_top=False, weights='imagenet', input_tensor = inputs)
   x.trainable = False
