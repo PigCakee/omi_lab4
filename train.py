@@ -53,7 +53,7 @@ def create_dataset(filenames, batch_size):
 
 data_augmentation = tf.keras.Sequential(
     [
-        tf.keras.layers.experimental.preprocessing.RandomCrop(224, 224)
+        preprocessing.RandomCrop(224, 224)
     ]
 )
 
