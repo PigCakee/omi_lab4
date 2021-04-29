@@ -48,18 +48,19 @@ def create_dataset(filenames, batch_size):
   """
   return tf.data.TFRecordDataset(filenames)\
     .map(parse_proto_example, num_parallel_calls=tf.data.AUTOTUNE)\
-    .cache()\
-    .map(data_augmentation)\
     .batch(batch_size)\
     .prefetch(tf.data.AUTOTUNE)
 
-data_augmentation(image, label):
-  crop = tf.image.random_crop(image, [RESIZE_TO, RESIZE_TO, 3])
-  return crop, label
+data_augmentation = tf.keras.Sequential(
+    [
+        preprocessing.RandomFlip("horizontal_and_vertical", seed=1)
+    ]
+)
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3)
-  x = EfficientNetB0(include_top=False, weights='imagenet', input_tensor = inputs)
+  x = data_augmentation(inputs)
+  x = EfficientNetB0(include_top=False, weights='imagenet', input_tensor = x)
   x.trainable = False
   x = tf.keras.layers.GlobalAveragePooling2D()(x.output)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
