@@ -58,7 +58,7 @@ data_augmentation = tf.keras.Sequential(
 )
 
 def build_model():
-  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3)
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   x = data_augmentation(inputs)
   x = EfficientNetB0(include_top=False, weights='imagenet', input_tensor = x)
   x.trainable = False
