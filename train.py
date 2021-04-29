@@ -37,7 +37,7 @@ def parse_proto_example(proto):
   example = tf.io.parse_single_example(proto, keys_to_features)
   example['image'] = tf.image.decode_jpeg(example['image/encoded'], channels=3)
   example['image'] = tf.image.convert_image_dtype(example['image'], dtype=tf.uint8)
-  example['image'] = tf.image.resize(example['image'], tf.constant([RESIZE_TO, RESIZE_TO]))
+  example['image'] = tf.image.resize(example['image'], tf.constant([250, 250]))
   return example['image'], tf.one_hot(example['image/label'], depth=NUM_CLASSES)
 
 
@@ -53,7 +53,7 @@ def create_dataset(filenames, batch_size):
 
 data_augmentation = tf.keras.Sequential(
     [
-        preprocessing.RandomFlip("horizontal_and_vertical", seed=1)
+        tf.keras.layers.experimental.preprocessing.RandomCrop(224, 224)
     ]
 )
 
