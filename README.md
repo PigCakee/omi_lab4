@@ -217,7 +217,7 @@ data_augmentation = tf.keras.Sequential(
 
 Максимальная точность на валидационной выборке (15 эпох) = 65%
 
-2. factor = 0.63
+2. factor = 0.66
 https://tensorboard.dev/experiment/KD50sbiGSZie2UeP0znKfw/#scalars&runSelectionState=eyJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlfQ%3D%3D
 
 ```
