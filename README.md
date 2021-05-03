@@ -358,6 +358,7 @@ data_augmentation = tf.keras.Sequential(
 ## 4. Обучить нейронную сеть с использованием оптимальных техник аугментации данных 2a-с совместно
 https://tensorboard.dev/experiment/kNhQy1ZXR7KJ3e60koDW0g/#scalars&runSelectionState=eyJmMTAxLTE2MTk3MTY0MzkuNDYyODc2Ni90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTcxNjQzOS40NjI4NzY2L3ZhbGlkYXRpb24iOmZhbHNlLCJmMTAxLTE2MTk5NDI4NzYuODQzMDE2L3RyYWluIjpmYWxzZSwiZjEwMS0xNjE5OTQyODc2Ljg0MzAxNi92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjIwMDI3NjI4LjUwODQ5MzcvdHJhaW4iOnRydWUsImYxMDEtMTYyMDAyNzYyOC41MDg0OTM3L3ZhbGlkYXRpb24iOnRydWV9
 
+```
 data_augmentation = tf.keras.Sequential(
     [
         preprocessing.RandomCrop(224, 224),
@@ -365,6 +366,7 @@ data_augmentation = tf.keras.Sequential(
         preprocessing.RandomFlip("horizontal_and_vertical", seed=1)
     ]
 )
+```
 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab3/main/epoch_categorical_accuracy_1_(0001).svg">
