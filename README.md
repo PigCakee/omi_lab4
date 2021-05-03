@@ -262,7 +262,7 @@ data_augmentation = tf.keras.Sequential(
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_fill_mode_constant.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_3_c_fill_mode_constant.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_constant.svg">
 
 2. fill_mode = reflect
 https://tensorboard.dev/experiment/qnpUrukZR8WRx5mwsxdXJg/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzA1ODkuNzM3MzUwNy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjMwNTg5LjczNzM1MDcvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MjkwMTAuNzM2MDMxMy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjI5MDEwLjczNjAzMTMvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MzIxNDAuNzU0MzIwOS90cmFpbiI6dHJ1ZSwiZjEwMS0xNjE5NjMyMTQwLjc1NDMyMDkvdmFsaWRhdGlvbiI6dHJ1ZX0%3D
