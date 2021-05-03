@@ -24,10 +24,10 @@ def build_model():
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab3/main/epoch_categorical_accuracy_1_(0001).svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab3/main/epoch_loss_1_(0001).svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
 
 ### 2.b. Использование случайной части изображения
 https://tensorboard.dev/experiment/XjBBluVTQbKAOP0Tx01TlQ/#scalars
@@ -61,10 +61,10 @@ def build_model():
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_b.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_b.svg">
 
 ### 2.c. Поворот на случайный угол
 https://tensorboard.dev/experiment/BepaM6f8Sv2dc6HzeVXD8g/#scalars
@@ -86,10 +86,10 @@ def build_model():
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_c.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_c.svg">
 
 ### Анализ результатов:
 
@@ -102,10 +102,10 @@ https://tensorboard.dev/experiment/lw3Z3V11Tju2IebnN4PIrg/
 Так как единственным параметром при заданном условии является параметр seed, а его исследовать необходимости нет, то этот эксперимент просто дублирует эксперимент 2.а.
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_a.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_a.svg">
 
 ### 3.b. Использование случайной части изображения
 
@@ -126,10 +126,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_b_224.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_b_224.svg">
 
 2. height = 150, width = 150
 https://tensorboard.dev/experiment/jqDr8EwIRfW6PsRMT4OIbw/#scalars
@@ -142,10 +142,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_b_150.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_b_150.svg">
 
 3. height = 112, width = 112
 https://tensorboard.dev/experiment/60kYqx19R1u2sAkvov1yHQ/#scalars&runSelectionState=eyJmMTAxLTE2MTk3MDQwOTQuNTA1MDQzL3RyYWluIjp0cnVlLCJmMTAxLTE2MTk3MDEzMDguMzU4NDA4L3RyYWluIjpmYWxzZSwiZjEwMS0xNjE5NzAxMzA4LjM1ODQwOC92YWxpZGF0aW9uIjpmYWxzZX0%3D
@@ -158,10 +158,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_b_112.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_b_112.svg">
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
@@ -188,10 +188,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_factor_1.0.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_1.0.svg">
 
 2. factor = 0.63
 https://tensorboard.dev/experiment/KD50sbiGSZie2UeP0znKfw/#scalars&runSelectionState=eyJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlfQ%3D%3D
@@ -205,10 +205,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_factor_0.63.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_0.63.svg">
 
 3. factor = 0.33
 https://tensorboard.dev/experiment/mtvxQKXwR3iMW3W8GMVWlw/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MjkwMTAuNzM2MDMxMy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjI5MDEwLjczNjAzMTMvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MzA1ODkuNzM3MzUwNy90cmFpbiI6dHJ1ZX0%3D
@@ -222,10 +222,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_factor_0.33.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_0.33.svg">
 
 4. factor = 0.1
 https://tensorboard.dev/experiment/qnpUrukZR8WRx5mwsxdXJg/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzA1ODkuNzM3MzUwNy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjMwNTg5LjczNzM1MDcvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MjkwMTAuNzM2MDMxMy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjI5MDEwLjczNjAzMTMvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MzIxNDAuNzU0MzIwOS90cmFpbiI6dHJ1ZSwiZjEwMS0xNjE5NjMyMTQwLjc1NDMyMDkvdmFsaWRhdGlvbiI6dHJ1ZX0%3D
@@ -239,10 +239,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_factor_0.1.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_0.1.svg">
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
@@ -259,10 +259,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_fill_mode_constant.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_3_c_fill_mode_constant.svg">
 
 2. fill_mode = reflect
 https://tensorboard.dev/experiment/qnpUrukZR8WRx5mwsxdXJg/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzA1ODkuNzM3MzUwNy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjMwNTg5LjczNzM1MDcvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MjkwMTAuNzM2MDMxMy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjI5MDEwLjczNjAzMTMvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MzIxNDAuNzU0MzIwOS90cmFpbiI6dHJ1ZSwiZjEwMS0xNjE5NjMyMTQwLjc1NDMyMDkvdmFsaWRhdGlvbiI6dHJ1ZX0%3D
@@ -276,10 +276,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_fill_mode_reflect.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_reflect.svg">
 
 3. fill_mode = wrap
 https://tensorboard.dev/experiment/kZO0vexOQwuGi5Gca09LKQ/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzM4MDAuMzk4ODY3NC90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYzNTM4Mi4wMjc2MTM2L3RyYWluIjp0cnVlLCJmMTAxLTE2MTk2MzM4MDAuMzk4ODY3NC92YWxpZGF0aW9uIjpmYWxzZX0%3D
@@ -293,10 +293,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_fill_mode_wrap.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_wrap.svg">
 
 4. fill_mode = nearest
 https://tensorboard.dev/experiment/vvCqHN97RXqbAVmNiZK0Og/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzM4MDAuMzk4ODY3NC90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYzMzgwMC4zOTg4Njc0L3ZhbGlkYXRpb24iOmZhbHNlLCJmMTAxLTE2MTk2MzUzODIuMDI3NjEzNi90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYzNTM4Mi4wMjc2MTM2L3ZhbGlkYXRpb24iOmZhbHNlLCJmMTAxLTE2MTk2MzY4NDQuMDA4MzkyOC90cmFpbiI6dHJ1ZSwiZjEwMS0xNjE5NjM2ODQ0LjAwODM5MjgvdmFsaWRhdGlvbiI6dHJ1ZX0%3D
@@ -310,10 +310,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_fill_mode_nearest.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_nearest.svg">
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
@@ -330,10 +330,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_interpolation_bilineal.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_interpolation_bilineal.svg">
 
 2. interpolation = nearest
 https://tensorboard.dev/experiment/6LfvHxYOQyWredF1sMtA5Q/#scalars
@@ -347,10 +347,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_interpolation_nearest.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_interpolation_nearest.svg">
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне). 
@@ -369,10 +369,10 @@ data_augmentation = tf.keras.Sequential(
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_4.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_4.svg">
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
