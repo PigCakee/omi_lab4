@@ -426,3 +426,15 @@ data_augmentation = tf.keras.Sequential(
 
 ## Дополнение: изображения, полученные при использовании различных техник аугментации данных:
 
+#### Случайное горизонтальное и вертикальное отображение
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/flip.png">
+
+#### Использование случайной части изображения
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/crop.png">
+
+#### Поворот на случайный угол
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/rotation.png">
+
+#### Все методы вместе
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/all.png">
+
