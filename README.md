@@ -29,6 +29,8 @@ def build_model():
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_a.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 66%
+
 ### 2.b. Использование случайной части изображения
 https://tensorboard.dev/experiment/XjBBluVTQbKAOP0Tx01TlQ/#scalars
 
@@ -66,6 +68,8 @@ def build_model():
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_b.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 43%
+
 ### 2.c. Поворот на случайный угол
 https://tensorboard.dev/experiment/BepaM6f8Sv2dc6HzeVXD8g/#scalars
 
@@ -91,6 +95,8 @@ def build_model():
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_2_c.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 65%
+
 ### Анализ результатов:
 
 При темпе обучения 0.0001 наблюдается максимальная точность ~68%, однако график потерь свидетельствует о том, что сеть еще можно обучать дальше (график за 50 эпох не успел пойти вверх). При темпе обучения 0.001 максимальная точность составляет ~67.5%, однако график после 10 эпохи начал идти на убыль, а график функции потерь, в свою очередь, расти. Это свидетельствует о переобучаемости сети. Из вышеперечисленного можно сделать вывод, что наибольшая точность на 50 эпохах была достигнута в случае темпа обучения равного 0.0001. В случае, если увеличивать это значение, то сеть очень быстро начинает переобучаться. В случае с темпом обучения в 0.01 можо ожидать еще большего ухудшения результатов, что подтвердится с следюущих экспериментах.
@@ -106,6 +112,8 @@ https://tensorboard.dev/experiment/lw3Z3V11Tju2IebnN4PIrg/
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_a.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 66%
 
 ### 3.b. Использование случайной части изображения
 
@@ -130,6 +138,8 @@ data_augmentation = tf.keras.Sequential(
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_b_224.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 57%
 
 2. height = 150, width = 150
 https://tensorboard.dev/experiment/jqDr8EwIRfW6PsRMT4OIbw/#scalars
@@ -163,6 +173,8 @@ data_augmentation = tf.keras.Sequential(
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_b_112.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 44%
+
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
 
@@ -193,22 +205,26 @@ data_augmentation = tf.keras.Sequential(
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_1.0.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 65%
+
 2. factor = 0.63
 https://tensorboard.dev/experiment/KD50sbiGSZie2UeP0znKfw/#scalars&runSelectionState=eyJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlfQ%3D%3D
 
 ```
 data_augmentation = tf.keras.Sequential(
     [
-     preprocessing.RandomRotation(0.63, fill_mode='reflect', interpolation='bilinear', seed=1, name=None, fill_value=0.0)
+     preprocessing.RandomRotation(0.66, fill_mode='reflect', interpolation='bilinear', seed=1, name=None, fill_value=0.0)
     ]
 )
 ```
 
 #### epoch_categorical_accuracy
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_factor_0.63.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_categorical_accuracy_3_c_factor_0.66.svg">
 
 #### epoch_loss
-<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_0.63.svg">
+<img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_0.66.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 64%
 
 3. factor = 0.33
 https://tensorboard.dev/experiment/mtvxQKXwR3iMW3W8GMVWlw/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MjkwMTAuNzM2MDMxMy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjI5MDEwLjczNjAzMTMvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MzA1ODkuNzM3MzUwNy90cmFpbiI6dHJ1ZX0%3D
@@ -227,6 +243,8 @@ data_augmentation = tf.keras.Sequential(
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_0.33.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 65,5%
+
 4. factor = 0.1
 https://tensorboard.dev/experiment/qnpUrukZR8WRx5mwsxdXJg/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzA1ODkuNzM3MzUwNy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjMwNTg5LjczNzM1MDcvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MjkwMTAuNzM2MDMxMy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjI5MDEwLjczNjAzMTMvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MzIxNDAuNzU0MzIwOS90cmFpbiI6dHJ1ZSwiZjEwMS0xNjE5NjMyMTQwLjc1NDMyMDkvdmFsaWRhdGlvbiI6dHJ1ZX0%3D
 
@@ -243,6 +261,8 @@ data_augmentation = tf.keras.Sequential(
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_factor_0.1.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 66,7%
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
@@ -264,6 +284,8 @@ data_augmentation = tf.keras.Sequential(
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_constant.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 66,5%
+
 2. fill_mode = reflect
 https://tensorboard.dev/experiment/qnpUrukZR8WRx5mwsxdXJg/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzA1ODkuNzM3MzUwNy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjMwNTg5LjczNzM1MDcvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MjkwMTAuNzM2MDMxMy92YWxpZGF0aW9uIjpmYWxzZSwiZjEwMS0xNjE5NjI5MDEwLjczNjAzMTMvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2Mjg5NzMuMTQwODMzMS90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdmFsaWRhdGlvbiI6ZmFsc2UsImYxMDEtMTYxOTYyNjkwOC42MTg4NTUvdHJhaW4iOmZhbHNlLCJmMTAxLTE2MTk2MzIxNDAuNzU0MzIwOS90cmFpbiI6dHJ1ZSwiZjEwMS0xNjE5NjMyMTQwLjc1NDMyMDkvdmFsaWRhdGlvbiI6dHJ1ZX0%3D
 
@@ -280,6 +302,8 @@ data_augmentation = tf.keras.Sequential(
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_reflect.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 66,7%
 
 3. fill_mode = wrap
 https://tensorboard.dev/experiment/kZO0vexOQwuGi5Gca09LKQ/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzM4MDAuMzk4ODY3NC90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYzNTM4Mi4wMjc2MTM2L3RyYWluIjp0cnVlLCJmMTAxLTE2MTk2MzM4MDAuMzk4ODY3NC92YWxpZGF0aW9uIjpmYWxzZX0%3D
@@ -298,6 +322,8 @@ data_augmentation = tf.keras.Sequential(
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_wrap.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 66,3%
+
 4. fill_mode = nearest
 https://tensorboard.dev/experiment/vvCqHN97RXqbAVmNiZK0Og/#scalars&runSelectionState=eyJmMTAxLTE2MTk2MzM4MDAuMzk4ODY3NC90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYzMzgwMC4zOTg4Njc0L3ZhbGlkYXRpb24iOmZhbHNlLCJmMTAxLTE2MTk2MzUzODIuMDI3NjEzNi90cmFpbiI6ZmFsc2UsImYxMDEtMTYxOTYzNTM4Mi4wMjc2MTM2L3ZhbGlkYXRpb24iOmZhbHNlLCJmMTAxLTE2MTk2MzY4NDQuMDA4MzkyOC90cmFpbiI6dHJ1ZSwiZjEwMS0xNjE5NjM2ODQ0LjAwODM5MjgvdmFsaWRhdGlvbiI6dHJ1ZX0%3D
 
@@ -314,6 +340,8 @@ data_augmentation = tf.keras.Sequential(
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_fill_mode_nearest.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 66,9%
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
@@ -335,6 +363,8 @@ data_augmentation = tf.keras.Sequential(
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_interpolation_bilineal.svg">
 
+Максимальная точность на валидационной выборке (15 эпох) = 66,9%
+
 2. interpolation = nearest
 https://tensorboard.dev/experiment/6LfvHxYOQyWredF1sMtA5Q/#scalars
 
@@ -351,6 +381,8 @@ data_augmentation = tf.keras.Sequential(
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_3_c_interpolation_nearest.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 65,8%
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне). 
@@ -373,6 +405,8 @@ data_augmentation = tf.keras.Sequential(
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/PigCakee/omi_lab4/main/epoch_loss_4.svg">
+
+Максимальная точность на валидационной выборке (15 эпох) = 64,4%
 
 ### Анализ результатов
 Результаты в ходе выполнения этого эксперимента практически идентичны с результатами прошлого эксперимента. Единственное отличие в значениях: При темпе обучения 0.0001 максимальная точность за 50 эпох достигла ~67.5%, при 0.001 - ~67%, при 0.01 - ~60% (график потерь в этом случае начал расти практически в самом начале обучения, а точность оставалась на примерно одном и том же уровне).
